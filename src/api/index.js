@@ -11,7 +11,7 @@ const api = axios.create({
 
 //상대경로를 사용해야하며 절대경로를 사용하게 되면 axios.create의 base가 덮어쓰여진다.
 const movieApi = {
-    nowPlaying: () => api.get('movies/now_playing'),
+    nowPlaying: () => api.get('movie/now_playing'),
     upcoming: () => api.get('movie/upcoming'),
     // toprated: () => api.get('movie/top_rated')
     popular: () => api.get('movie/popular'),

@@ -54,13 +54,13 @@ export default withRouter(({ location: { pathname } }) => (
 
         <List>
             <Item current={pathname === '/'}>
-                {pathname === '/' ? <HLink>Movies</HLink> : <SLink to="/">Movies</SLink>}
+                {pathname === '/' ? <HLink>영화</HLink> : <SLink to="/">영화</SLink>}
             </Item>
-            <Item current={pathname === '/tv'}>
-                {pathname === '/tv' ? <HLink>Shows</HLink> : <SLink to="/tv">Shows</SLink>}
+            <Item current={pathname === '/show'}>
+                {pathname === '/show' ? <HLink>프로그램</HLink> : <SLink to="/show">프로그램</SLink>}
             </Item>
             <Item current={pathname === '/search'}>
-                {pathname === '/search' ? <HLink>Search</HLink> : <SLink to="/search">Search</SLink>}
+                {pathname === '/search' ? <HLink>검색</HLink> : <SLink to="/search">검색</SLink>}
             </Item>
         </List>
     </Header>
