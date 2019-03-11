@@ -49,7 +49,7 @@ const Cover = styled.div`
 const Data = styled.div`
     position:relative;
     width: 70%;
-    width:550px;
+    width:600px;
     margin-left: 50px;
 `;
 
@@ -103,7 +103,6 @@ const DetailPresenter = ({ result, loading, error }) => (
         </Helmet>
         {loading ? (<Loader />) : (
             <Container>
-                {console.log(result)}
                 <Helmet>
                     <title>{result.title ? result.title : result.name}</title>
                 </Helmet>
@@ -118,7 +117,7 @@ const DetailPresenter = ({ result, loading, error }) => (
                         </Title>
                         <ItemContainer>
                             <Item>
-                                {result.release_date ? result.release_date : result.first_air_date}
+                                {result.release_date ? result.release_date.substring(0, 4) : result.first_air_date.substring(0, 4)}
                             </Item>
                             <Divider>·</Divider>
                             <Item>

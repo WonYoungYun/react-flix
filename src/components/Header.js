@@ -30,7 +30,7 @@ const Item = styled.li`
     height:50px;
     text-align:center;
     border-bottom: 5px solid ${props => props.current ? "#3498db" : "transparent"};
-    transition: border-bottom .5s ease-in-out
+    transition: border-bottom .5s ease-in-out;
     /* &:not(:last-child){
         margin-right: 10px;
     } */

@@ -67,7 +67,7 @@ const Poster = ({ id, imageUrl, title, rating, year, isMovie = false }) => (
             <ImageContainer>
                 <Info>
                     <Title>{title}</Title>
-                    <Year>{year}</Year>
+                    <Year>{year.substring(0, 4)}</Year>
                 </Info>
                 <Image bgUrl={imageUrl ? `https://image.tmdb.org/t/p/w300${imageUrl}` : require("../assets/noPosterSmall.png")} />
                 {rating > 0 &&

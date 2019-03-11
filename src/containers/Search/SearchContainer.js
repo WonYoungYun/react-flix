@@ -40,10 +40,12 @@ export default class extends Component {
 
     searchByTerm = async () => {
         const { searchTerm } = this.state;
+        let term = searchTerm
+        term = term.split(' ').join('-')
         this.setState({ loading: true })
         try {
-            const { data: { results: movieResults } } = await movieApi.search(searchTerm);
-            const { data: { results: showResults } } = await tvApi.search(searchTerm);
+            const { data: { results: movieResults } } = await movieApi.search(term);
+            const { data: { results: showResults } } = await tvApi.search(term);
 
             this.setState({
                 movieResults,

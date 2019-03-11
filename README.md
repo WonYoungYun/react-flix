@@ -13,6 +13,31 @@ React로 만드는 무비 웹
 - 자세한 소개
 
 API
-(이곳)[https://api.themoviedb.org/3/]
+[themoviedb](https://www.themoviedb.org/)의 API를 이용하여 제작하였습니다.
+
+설치방법
+-
+
+```
+yarn install
+```
+
+src/config/index.js를 생성해야 합니다.
+```
+const cfg = {
+    key: ""//themoviedb의 api KEY
+}
+
+export default cfg
+```
+
+실행
+-
+```
+yarn start
+```
+
+
+
 
 
