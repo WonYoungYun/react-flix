@@ -37,7 +37,7 @@ export default cfg
 yarn start
 ```
 
-
-
-
+미리보기
+=
+[이곳](https://WonYoungYun.github.io/react-flix)을 통해 결과물을 확인하세요.
 

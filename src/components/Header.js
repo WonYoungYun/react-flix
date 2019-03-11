@@ -41,6 +41,11 @@ const SLink = styled(Link)`
     display:flex;
     align-items:center;
     justify-content:center;
+    background-color: transparent;
+    transition: background-color .1s linear;
+    &:hover{
+        background-color:#000
+    }
 `;
 
 const HLink = styled.span`
