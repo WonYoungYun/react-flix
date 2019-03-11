@@ -1,0 +1,12 @@
+{
+  "main.js": "/react-flix/static/js/main.1cdf15b3.chunk.js",
+  "main.js.map": "/react-flix/static/js/main.1cdf15b3.chunk.js.map",
+  "runtime~main.js": "/react-flix/static/js/runtime~main.4f0f46e8.js",
+  "runtime~main.js.map": "/react-flix/static/js/runtime~main.4f0f46e8.js.map",
+  "static/js/2.40123103.chunk.js": "/react-flix/static/js/2.40123103.chunk.js",
+  "static/js/2.40123103.chunk.js.map": "/react-flix/static/js/2.40123103.chunk.js.map",
+  "index.html": "/react-flix/index.html",
+  "precache-manifest.9b1716986b969c99b097aae599d43be5.js": "/react-flix/precache-manifest.9b1716986b969c99b097aae599d43be5.js",
+  "service-worker.js": "/react-flix/service-worker.js",
+  "static/media/noPosterSmall.png": "/react-flix/static/media/noPosterSmall.87a0eb6a.png"
+}
