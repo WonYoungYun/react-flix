@@ -8,15 +8,15 @@ self.__precacheManifest = [
     "url": "/react-flix/static/js/runtime~main.4f0f46e8.js"
   },
   {
-    "revision": "6d5435ebc6e205e2867c",
-    "url": "/react-flix/static/js/main.1cdf15b3.chunk.js"
+    "revision": "073f587061fba6b6660f",
+    "url": "/react-flix/static/js/main.96ee92fc.chunk.js"
   },
   {
     "revision": "6a1712c97d5209a0a9ce",
     "url": "/react-flix/static/js/2.40123103.chunk.js"
   },
   {
-    "revision": "02c4f3ff93e7854bc6b3e42cd909bb73",
+    "revision": "fd00e9a921e4f45449a14e6d12085c7a",
     "url": "/react-flix/index.html"
   }
 ];
