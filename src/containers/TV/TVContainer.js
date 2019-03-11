@@ -12,18 +12,21 @@ export default class extends Component {
     }
     async componentDidMount() {
         try {
-            const { data: { results: topRated } } = await tvApi.topRated;
-            const { data: { results: airingToday } } = await tvApi.airingToday;
-            const { data: { results: popular } } = await tvApi.popular;
+
+            const { data: { results: topRated } } = await tvApi.topRated();
+            const { data: { results: airingToday } } = await tvApi.airingToday();
+            const { data: { results: popular } } = await tvApi.popular();
             this.setState({
                 topRated,
                 popular,
                 airingToday
             })
+
         } catch {
             this.setState({
                 error: "프로그램을 찾을 수 없어요!"
             })
+
         } finally {
             this.setState({
                 loading: false,
