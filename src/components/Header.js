@@ -13,8 +13,9 @@ const Header = styled.header`
     display: flex;
     align-items:center;
     padding: 0 10px;
-    background-color:rgba(20,20,20,.8);
-    box-shadow: 0 1px 5px 2px rgba(0,0,0,.8)
+    background-color:rgba(20,20,20);
+    box-shadow: 0 1px 5px 2px rgba(0,0,0,.8);
+    z-index:9999;
 
 `;
 

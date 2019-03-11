@@ -23,6 +23,26 @@ const Rating = styled.span`
     opacity: 0;
 `;
 
+const Title = styled.span`
+    display:block;
+    margin-bottom: 3px;
+`;
+
+const Year = styled.span`
+    font-size:12px;
+    color:rgba(255,255,255, .8);
+`;
+
+const Info = styled.div`
+    position:absolute;
+    top:40%;
+    width:100%;
+    padding: 0 8px;
+    text-align:center;
+    opacity:0;
+    z-index:1;
+`;
+
 const ImageContainer = styled.div`
     position:relative;
     margin-bottom: 5px;
@@ -33,25 +53,24 @@ const ImageContainer = styled.div`
         ${Rating}{
             opacity: 1;
         }
+        ${Info}{
+            opacity:1;
+        }
     }
 `;
 
-const Title = styled.span`
-    display:block;
-    margin-bottom: 3px;
-`;
 
-const Year = styled.span`
-    font-size:10px;
-    color:rgba(255,255,255, .5);
-`;
 
 const Poster = ({ id, imageUrl, title, rating, year, isMovie = false }) => (
     <Link to={isMovie ? `/movie/${id}` : `/show/${id}`}>
         <Container>
             <ImageContainer>
+                <Info>
+                    <Title>{title}</Title>
+                    <Year>{year}</Year>
+                </Info>
                 <Image bgUrl={imageUrl ? `https://image.tmdb.org/t/p/w300${imageUrl}` : require("../assets/noPosterSmall.png")} />
-                {rating &&
+                {rating > 0 &&
                     <Rating>
                         {Array(Math.round(rating / 2)).fill(1).map((e, idx) =>
                             <span role="img" aria-label="평점" key={idx}>⭐</span>
@@ -61,9 +80,8 @@ const Poster = ({ id, imageUrl, title, rating, year, isMovie = false }) => (
                 </Rating>
                 }
             </ImageContainer>
-            {/* <Title>{title.length > 15 ? `${title.substring(0, 15)}...` : title}</Title> */}
-            <Title>{title}</Title>
-            <Year>{year}</Year>
+
+
         </Container>
     </Link>
 )

@@ -47,19 +47,22 @@ const Cover = styled.div`
 `;
 
 const Data = styled.div`
+    position:relative;
     width: 70%;
+    width:550px;
     margin-left: 50px;
 `;
 
 const Title = styled.h2`
     font-size: 32px;
     font-weight:600;
+
     margin-bottom:20px;
 `;
 
 const ItemContainer = styled.div`
     margin:20px 0;
-    width:500px;
+
 `;
 
 const Item = styled.span``;
@@ -73,10 +76,25 @@ const Overview = styled.p`
     font-size: 12px;
     opacity: .7;
     line-height: 1.5;
-    width:550px;
+
 
 `;
 const Trailer = styled.div``;
+
+const Production = styled.div`
+    position:absolute;
+    left:0;
+    bottom:10px;
+    width:100%;
+    font-size: 14px;
+    
+`;
+
+const Company = styled.div`
+    width:100%;
+    margin-bottom:10px;
+`;
+
 
 const DetailPresenter = ({ result, loading, error }) => (
     <>
@@ -89,7 +107,7 @@ const DetailPresenter = ({ result, loading, error }) => (
                 <Helmet>
                     <title>{result.title ? result.title : result.name}</title>
                 </Helmet>
-                <Backdrop bgImage={`https://image.tmdb.org/t/p/original${result.backdrop_path}`} />
+                {result.backdrop_path && <Backdrop bgImage={`https://image.tmdb.org/t/p/original${result.backdrop_path}`} />}
                 <Content>
                     <Cover bgImage={result.poster_path
                         ? `https://image.tmdb.org/t/p/original${result.poster_path}`
@@ -108,6 +126,10 @@ const DetailPresenter = ({ result, loading, error }) => (
                         </Item>
                             <Divider>·</Divider>
                             <Item>
+                                <a href={result.homepage} >홈페이지</a>
+                            </Item>
+                            <Divider>·</Divider>
+                            <Item>
                                 {result.genres && result.genres.map((genre, idx) => idx === result.genres.length - 1 ? genre.name : `${genre.name} /`)}
                             </Item>
                             <Divider>·</Divider>
@@ -122,14 +144,18 @@ const DetailPresenter = ({ result, loading, error }) => (
                         <Overview>
                             {result.overview}
                         </Overview>
-                        {result.videos &&
-                            result.videos.results.length > 0
-                            &&
-                            <Trailer>
-                                <iframe title={result.id} width="533" height="300" src={`https://www.youtube.com/embed/${result.videos.results[0].key}`} frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
-                            </Trailer>
-                        }
+
+                        <Trailer>
+                            {result.videos &&
+                                result.videos.results.length > 0
+                                &&
+                                <iframe title={result.id} width="533" height="300" src={`https://www.youtube.com/embed/${result.videos.results[0].key}`} frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>}
+                        </Trailer>
+                        <Production>
+                            {result.production_companies.map(company => <Company key={company.name}>{company.name}</Company>)}
+                        </Production>
                     </Data>
+
                 </Content>
                 {error && <Message text={error} color="#e74c3c" />}
             </Container>
